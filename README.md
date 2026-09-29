@@ -36,4 +36,4 @@ flowchart LR
 
 The workshop can produce an **off-chain simulation**. Live AI generation, connected Solana execution, deployed behavior, and participant success each need separate evidence. See `WORKSHOP.md` for the 90-minute activity and checks.
 
-MIT licensed. The full PredictKit application is a [separate repository](https://github.com/megandmartin/predictkit). This kit works without it.
+MIT licensed. 
