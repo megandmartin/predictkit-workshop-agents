@@ -2,7 +2,7 @@
 
 A small, open-source kit for teaching builders to turn one prediction-market idea into an honest prototype and demo plan with AI assistance. **It contains the eight detailed role prompts and all ten skills adapted from the original PredictKit source, plus setup and workshop guides.** No PredictKit server, Python coordinator, Solana program, live trading, wallet integration, or deployment is included.
 
-**[Open the visual workshop guide](docs/index.html)** · [Browse all agents and skills](CATALOG.md) · [Copy-ready Codex and Claude Code prompts](PROMPTS.md) · [90-minute facilitator plan](WORKSHOP.md)
+**[Open the visual workshop guide](https://megandmartin.github.io/predictkit-workshop-agents/)** · [Browse all agents and skills](CATALOG.md) · [Copy-ready Codex and Claude Code prompts](PROMPTS.md) · [90-minute facilitator plan](WORKSHOP.md)
 
 ## Start in five minutes
 
@@ -40,6 +40,6 @@ flowchart LR
 
 The workshop can produce an **off-chain simulation**. Live AI generation, connected Solana execution, deployed behavior, and participant success each need separate evidence. See `WORKSHOP.md` for the 90-minute activity and checks.
 
-To check a fresh clone's role/skill wiring and guide links without calling an AI provider, run `python3 scripts/check_kit.py`. This validates the kit structure; it does not test a generated prototype. The [visual guide](docs/index.html) can be opened in a browser from the cloned folder.
+To check a fresh clone's role/skill wiring and guide links without calling an AI provider, run `python3 scripts/check_kit.py`. This validates the kit structure; it does not test a generated prototype. The [visual guide](https://megandmartin.github.io/predictkit-workshop-agents/) is also available locally at `docs/index.html`.
 
 MIT licensed. The full PredictKit application is a [separate repository](https://github.com/megandmartin/predictkit). This kit works without it.
