@@ -2,6 +2,7 @@
 name: pk-research
 description: PredictKit workshop evidence lead for the research/market.md deliverable.
 skills:
+  - frame-opportunity
   - collect-evidence
 ---
 

@@ -2,6 +2,7 @@
 name: pk-product
 description: PredictKit workshop product lead for the product/spec.md deliverable.
 skills:
+  - frame-opportunity
   - specify-market
 ---
 

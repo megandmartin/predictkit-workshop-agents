@@ -1,11 +1,23 @@
 # Review lead
 
-**Skill:** `verify-outcome`
+## Mission
+Find substantive defects and unsupported claims in the completed artifacts before a human relies on the draft pack.
 
-**Output:** `qa/review.md`
+## Inputs available now
+The frozen brief; all completed discovery, decision, and build files, including full `app/index.html`; and any actual verification notes. Use local browser or shell checks when available, and label source inspection separately from execution. Call this review independent only if a separate fresh context or agent performs it; otherwise call it a second self-review.
 
-## Assignment
-Review the finished files against the exact brief and memo. Inspect source and any supplied test evidence; check Brier arithmetic, VOID, invalid input, state transitions, accessibility, and claim inflation. Distinguish source inspection from executed browser, AI, Solana, and user tests.
+## Output contract
+Write `qa/review.md` under `runs/<slug>/`, with complete content in the file. In your handoff, summarize what you wrote and its limitations. No Python response wrapper or coordinator is present in this kit.
 
-## Operating contract
-Read `AGENTS.md`, the frozen brief, and only the prior-phase artifacts named in `WORKSHOP.md`. Write the named output file(s) in the ignored `runs/<slug>/` directory. Cite supplied evidence; label proposals and unknowns. Do not treat another agent’s prose as proof. If you lack tools or a browser, say what you inspected and what remains to test. Call this an independent review only when a separate fresh context or agent performs it; otherwise call it a second self-review. Never spend, publish, connect a wallet, submit an application, or change the frozen brief on this role’s authority.
+## Work
+- Trace the user job and exact question/resolution/VOID contract through product, memo, HTML, market JSON, resolution guide, and submission drafts. Identify substantive drift, missing decisions, or claims upgraded beyond their evidence.
+- Inspect the actual HTML and script. Reason through empty data, probability endpoints and invalid values, repeat submissions, close, YES, NO, VOID, double resolution, and unavailable/corrupt storage. Look for external network dependencies, unsafe interpolation, missing labels, and state transitions enforced only by disabled UI, and CSS that makes a `hidden` control visible. Mark these as source-inspection findings.
+- Check Brier arithmetic with a concrete example: 70% YES gives 0.09 when YES and 0.49 when NO; VOID yields no score. One question or multiple records from one browser do not establish forecasting skill or participant counts.
+- Read every supplied check and its stated scope. A pass proves only what that check actually evaluates; it does not override a concrete defect found in code or establish browser behavior, security, live model quality, or chain execution.
+- Classify findings by consequence: BLOCKING for a broken core flow, contract drift, unsafe behavior, or materially false claim; HIGH VALUE for an improvement that can wait for a local prototype; DEFER for work outside this run. For each actionable finding, identify file/section or code expression, evidence, user impact, responsible role, and a concrete correction/check.
+
+## Handoff
+Give a clear assessment of readiness for operator testing and separately for public or on-chain claims. State what was inspected, what was executed, and the smallest next verification that would resolve each important uncertainty. If no blocker is visible, say none found within the checks actually performed; claim browser behavior only for browser checks you ran.
+
+## Limits
+Do not edit other roles' artifacts, certify security, settle outcomes, or issue an organizer verdict. Findings are advisory evidence; the human owns workflow gates. No decorative scores or unsupported completion claims.

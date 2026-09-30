@@ -1,11 +1,26 @@
 ---
 name: verify-outcome
-description: Review the contract, implementation, and claims independently.
+description: Check a resolution contract or proposed result against supplied evidence, including boundary cases, state transitions, Brier scoring, and VOID handling.
 ---
+# Check the outcome against the contract
 
-# Verify Outcome
+Use for domain design and independent review. Use supplied contract text, artifacts, and evidence. The domain role should not assume unfinished frontend output; the reviewer inspects completed output. Local code and browser checks are allowed when available, but no role may establish a real-world event or chain state by assertion.
 
-Trace the brief through spec, decision memo, HTML, market JSON, resolution guide, and submission. Inspect empty, invalid, 0/100, repeat, close, YES/NO/VOID, second resolution, and storage-failure paths. Check Brier examples: 70% YES yields 0.09 for YES and 0.49 for NO; VOID is unscored. Classify blocking and high-value findings with file, evidence, impact, fix, and recheck. State what was inspected versus executed; do not infer live AI, Solana, deployment, or participant success.
+## Separate the question from the evidence
+Read the immutable question, rule, and VOID policy first. Identify the required source, observation window/timezone, units, comparator, rounding, and authority. Record omissions explicitly. Then compare available evidence to those requirements: identity, timestamp, relevant observation, conflicts, and provenance.
 
-## Handoff
-Write concrete findings and the smallest next verification. Keep simulation, live provider, chain, deployment, and participant outcomes at distinct evidence levels.
+Choose YES only when the event meets the rule; choose NO only when sufficient evidence establishes the rule's negative case. Missing data is not automatically NO. Apply VOID only when its specified condition is met. If the contract is incomplete or evidence conflicts without a precedence rule, withhold a conclusion and identify the exact missing decision. Never add a new rule after seeing an outcome.
+
+Worked cases should use the brief's actual semantics. For strict “above,” equality is not YES. An observation outside the stated window is not interchangeable with one inside. An unvisited URL or model explanation is not an authoritative observation.
+
+## Inspect the simulation mechanics
+The expected loop is OPEN → CLOSED → RESOLVED (YES/NO) or VOID. No new forecasts after close; no outcome before close; no silent second resolution. Also check that phase-specific controls are visibly hidden; a CSS class with `display:flex` can override the user-agent `[hidden]` rule even when event handlers guard the action. Manual close/attestation is a demonstration control, not independent verification of deadline, source, or authority.
+
+For binary Brier scoring, use probabilities in 0–1 and observed `y` in {0,1}. A 70% forecast gives 0.09 for YES and 0.49 for NO. Mean over recorded forecasts only; empty data gives no score. VOID is excluded and never displayed as a perfect zero score. Distinguish observations from unique participants and score arithmetic from demonstrated calibration.
+
+The domain role specifies these cases and handoff checks. The reviewer traces them through actual HTML/JavaScript, JSON, prose, and supplied deterministic results. Source inspection can find a defect; it cannot prove a rendered or executed flow. A static pass must not overrule a concrete contradiction.
+
+## Report a usable result
+State the permitted conclusion, exact supporting location, unresolved evidence, and next check. For defects, give file/section or code expression, user consequence, owner, and correction. Keep actual verification separate from proposed checks. If no defect is visible, say none found within the reviewed scope rather than certifying correctness or security.
+
+A human or program's authority to record a result is separate from evidence that it is correct. This skill grants no settlement permission, wallet access, or power to revise the question contract.

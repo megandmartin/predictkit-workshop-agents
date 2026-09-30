@@ -1,0 +1,17 @@
+# Verification record — 30 September 2026
+
+This report covers the **standalone workshop kit**, not the separate PredictKit app or any Solana deployment. Local rehearsal outputs were created under ignored `runs/` folders and are not included in the public repository.
+
+| Check | Observed result | Boundary |
+|---|---|---|
+| `python3 scripts/check_kit.py` | Passed: eight detailed roles, ten mirrored Codex/Claude skills, Claude agent mappings, copy-prompt parity, assets, and local links. | Structural check; it does not prove model quality. |
+| Skill frontmatter validation | All ten Codex skill folders passed the installed skill validator; Claude copies were byte-identical. | Local authoring check. |
+| Codex discovery rehearsal | Codex CLI 0.158.0-alpha.2.1 wrote `research/market.md`, `product/spec.md`, `architecture/plan.md`, and `decisions/build-memo.md` from the example brief, preserved the three exact contract strings, and stopped before app creation. A separate-agent launch failed in this CLI session; the documented sequential route succeeded. | One example run, not proof of all participant briefs or agent delegation. |
+| Codex build rehearsal | A later Codex run wrote HTML, market JSON, resolution guidance, and three submission drafts. The JSON parsed and preserved the brief's question, resolution rule, and VOID policy exactly. | Test artifacts are ignored, not shipped as source. |
+| Claude Code native role | Claude Code 2.1.132 launched `pk-research` with a normal Sonnet session and wrote `runs/claude-smoke/research/market.md`. The output applied the mapped evidence and framing instructions. | One role only; a full eight-role Claude workshop has not been rehearsed. A restricted custom-tools CLI invocation failed with an API tool-schema error, so the guide uses normal settings. |
+| Visual guide browser checks | Desktop at 1366px and mobile at 390px rendered without page-wide horizontal overflow. Both assistant tabs switched. A copy button returned “Copied” and exposed a live status message. On mobile, navigation remained visible, the clone command fit its card, and the roles table showed a swipe hint. | One local Chromium browser; other browsers and assistive technologies were not tested. |
+| Generated local prototype browser checks | Invalid 101% input was rejected. A 70% YES forecast scored 0.0900 for YES and 0.4900 for NO; VOID showed “Excluded.” The final VOID state and local forecast survived reload. | Local browser simulation only. No event evidence, wallet, provider, deployment, or independent participant completion. |
+
+The browser rehearsal exposed a stale “Close forecasting” button after final resolution: a CSS `display:flex` rule overrode the HTML `hidden` attribute, although the event handler rejected the action. The ignored test artifact was repaired and retested. The `build-prediction-ui` and `verify-outcome` skills and the frontend/reviewer role prompts now call out that exact failure mode for future runs. A separate fresh-context visual review caught hidden mobile navigation, clipped clone instructions, an unmarked horizontally scrollable table, and missing spoken copy feedback. Those four issues were repaired, and the affected mobile and copy interactions were retested.
+
+The next proof steps are a fresh participant attempting the whole flow without coaching, a complete Claude Code eight-role rehearsal when desired, and separate connected Solana testing if that capability becomes part of the workshop. Neither public source nor this report establishes those outcomes.

@@ -7,3 +7,6 @@ runs/
 *.pem
 *.log
 .DS_Store
+
+# Local browser QA captures
+.playwright-cli/
